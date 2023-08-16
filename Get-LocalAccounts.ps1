@@ -1,3 +1,5 @@
+# Editted in GitHub
+
 $LocalAdmins = [ADSI]"WinNT://$env:COMPUTERNAME/Administrators"
 $LocalAdminUsers = $LocalAdmins.Invoke('Members') | % {
     $path = ([adsi]$_).path
