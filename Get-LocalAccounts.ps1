@@ -27,6 +27,4 @@ $ResultObj = @{}
 $ResultObj.Add("LocalUsers",$LocalUsersObj)
 $ResultObj.Add("LocalAdmins",$LocalAdminUsers)
 
-$ResultObj | ConvertTo-Json -Compress  
-
- 
+$ResultObj | ConvertTo-Json -Compress
