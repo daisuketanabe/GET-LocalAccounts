@@ -1,5 +1,4 @@
 $LocalAdmins = [ADSI]"WinNT://$env:COMPUTERNAME/Administrators"
-
 $LocalAdminUsers = $LocalAdmins.Invoke('Members') | % {
     $path = ([adsi]$_).path
     $Properties = @{
@@ -23,8 +22,6 @@ foreach($LocalUser in $LocalUsers)
 }
 
 $ResultObj = @{}
-
 $ResultObj.Add("LocalUsers",$LocalUsersObj)
 $ResultObj.Add("LocalAdmins",$LocalAdminUsers)
-
 $ResultObj | ConvertTo-Json -Compress
